@@ -1,12 +1,12 @@
 //Bruteforce Approach
 //Code
 export default function findDuplicates(numbers) {
- for(let i = 0 ;i<numbers.length;i++){
-  for(let j=i+1;j<numbers.length;j++){
-    if(numbers[i]==numbers[j]) return true;
-  }
- }
- return false;
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] == numbers[j]) return true;
+        }
+    }
+    return false;
 }
 
 /** 
@@ -25,11 +25,11 @@ export default function findDuplicates(numbers) {
 
 //Code
 export default function findDuplicates(numbers) {
-  numbers.sort((a, b) => a - b);
-  for (let i = 0; i < numbers.length - 1; i++) {
-    if (numbers[i] === numbers[i + 1]) return true;
-  }
-  return false;
+    numbers.sort((a, b) => a - b);
+    for (let i = 0; i < numbers.length - 1; i++) {
+        if (numbers[i] === numbers[i + 1]) return true;
+    }
+    return false;
 }
 
 
@@ -52,14 +52,14 @@ Reduces the overhead of sorting the array
 
 // Code
 export default function findDuplicates(numbers) {
-  const seen = new Set()
-  for(let i=0;i<numbers.length;i++){
-    if(seen.has(numbers[i])){
-      return true;
+    const seen = new Set()
+    for (let i = 0; i < numbers.length; i++) {
+        if (seen.has(numbers[i])) {
+            return true;
+        }
+        seen.add(numbers[i]);
     }
-    seen.add(numbers[i]);
-  }
-  return false;
+    return false;
 }
 
 /** 
